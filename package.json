@@ -1,8 +1,8 @@
 {
   "name": "@s4tk/tunables",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Convenience functions for building tuning nodes.",
-  "main": "dst/tunables.js",
+  "main": "./tunables.js",
   "repository": {
     "type": "git",
     "url": "https://github.com/sims4toolkit/tunables.git"
