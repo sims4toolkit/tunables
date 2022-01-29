@@ -1,3 +1,3 @@
 cd dst/
-npm publish --dry-run
+npm publish --access public
 cd -
