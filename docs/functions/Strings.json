@@ -1,0 +1,66 @@
+{
+  "imports": [
+    "import { LocString, ... } from \"@s4tk/tunables\"; // ESM",
+    "const { LocString, ... } = require(\"@s4tk/tunables\"); // CJS"
+  ],
+  "header": {
+    "title": {
+      "prefix": null,
+      "name": "String Table Helpers"
+    },
+    "description": "Helper functions for adding new strings to a string table and returning a node for it.",
+    "repoUrl": "https://github.com/sims4toolkit/tunables/blob/main/src/tunables.ts"
+  },
+  "sections": [
+    {
+      "title": "Functions",
+      "content": [
+        {
+          "displayType": "function",
+          "prefix": "",
+          "name": "",
+          "generics": [
+            {
+              "name": "",
+              "extends": [
+                {
+                  "name": "",
+                  "path": ""
+                }
+              ]
+            }
+          ],
+          "returnType": {
+            "name": "",
+            "path": ""
+          },
+          "description": "",
+          "arguments": [
+            {
+              "name": "",
+              "type": {
+                "name": "",
+                "path": ""
+              },
+              "description": "",
+              "optional": false
+            }
+          ],
+          "exampleCode": ""
+        }
+      ]
+    }
+  ],
+  "footer": {
+    "seeAlso": [
+      {
+        "name": "StringTableResource",
+        "path": {
+          "pkg": "models",
+          "group": "resources",
+          "item": "StringTableResource"
+        }
+      }
+    ]
+  }
+}

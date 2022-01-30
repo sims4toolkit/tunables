@@ -1,0 +1,47 @@
+{
+  "imports": [
+    "import { T, U, ... } from \"@s4tk/tunables\"; // ESM",
+    "const { T, U, ... } = require(\"@s4tk/tunables\"); // CJS"
+  ],
+  "header": {
+    "title": {
+      "prefix": null,
+      "name": "Tunable Builders"
+    },
+    "description": "Helper functions for creating tunable nodes.",
+    "repoUrl": "https://github.com/sims4toolkit/tunables/blob/main/src/tunables.ts"
+  },
+  "sections": [
+    {
+      "title": "Functions",
+      "content": [
+        {
+          "displayType": "function",
+          "prefix": "",
+          "name": "C",
+          "returnType": {
+            "name": "XmlNode",
+            "path": {
+              "pkg": "xml-dom",
+              "group": "interfaces",
+              "item": "XmlNode"
+            }
+          },
+          "description": "Creates and returns a class tunable (C tag).",
+          "arguments": [
+            {
+              "name": "args",
+              "type": {
+                "name": "object",
+                "path": null
+              },
+              "description": "Object containing node values.",
+              "optional": false
+            }
+          ],
+          "exampleCode": ""
+        }
+      ]
+    }
+  ]
+}
