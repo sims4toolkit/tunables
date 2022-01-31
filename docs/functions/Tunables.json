@@ -39,7 +39,16 @@
               "optional": false
             }
           ],
-          "exampleCode": ""
+          "examples": [
+            {
+              "lang": "js",
+              "code": "const classNode = C({});"
+            },
+            {
+              "lang": "xml",
+              "code": "<!-- Output -->\n<C />"
+            }
+          ]
         }
       ]
     }
