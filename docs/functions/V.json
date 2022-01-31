@@ -1,0 +1,95 @@
+{
+  "$schema": "https://raw.githubusercontent.com/sims4toolkit/misc/main/json-schemas/docs-item-schema.json",
+  "imports": [
+    "import { V } from \"@s4tk/tunables\"; // ESM",
+    "const { V } = require(\"@s4tk/tunables\"); // CJS"
+  ],
+  "header": {
+    "title": {
+      "name": "Tunable Variant Builder"
+    },
+    "description": "Helper function for creating a tunable variant node (<V> tag).",
+    "repoUrl": "https://github.com/sims4toolkit/tunables/blob/main/src/tunables.ts"
+  },
+  "sections": [
+    {
+      "content": [
+        {
+          "displayType": "function",
+          "name": "V",
+          "returnType": {
+            "name": "XmlNode",
+            "path": {
+              "pkg": "xml-dom",
+              "group": "interfaces",
+              "item": "XmlNode"
+            }
+          },
+          "description": "Creates and returns a variant tunable (<V> tag).",
+          "arguments": [
+            {
+              "name": "args",
+              "type": {
+                "name": "object"
+              },
+              "description": "Object containing node values.",
+              "optional": false,
+              "properties": [
+                {
+                  "name": "name",
+                  "description": "Value to put in the 'n' attribute.",
+                  "optional": true,
+                  "type": {
+                    "name": "string"
+                  }
+                },
+                {
+                  "name": "type",
+                  "description": "Value to put in the 't' attribute.",
+                  "optional": true,
+                  "type": {
+                    "name": "string"
+                  }
+                },
+                {
+                  "name": "child",
+                  "description": "Child to put in this node.",
+                  "optional": true,
+                  "type": {
+                    "name": "XmlNode",
+                    "path": {
+                      "pkg": "xml-dom",
+                      "group": "interfaces",
+                      "item": "XmlNode"
+                    }
+                  }
+                }
+              ]
+            }
+          ],
+          "examples": [
+            {
+              "code": "const variantNode = V({\n  name: \"some_variant\",\n  type: \"enabled\",\n  child: T({ name: \"enabled\", value: \"True\" }),\n});"
+            },
+            {
+              "lang": "xml",
+              "code": "<!-- Output -->\n<V n=\"some_variant\" t=\"enabled\">\n  <T n=\"enabled\">True</T>\n</V>"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "footer": {
+    "seeAlso": [
+      {
+        "name": "T",
+        "path": {
+          "pkg": "tunables",
+          "group": "functions",
+          "item": "T"
+        }
+      }
+    ]
+  }
+}
