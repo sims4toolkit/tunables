@@ -86,7 +86,7 @@
         "name": "T",
         "path": {
           "pkg": "tunables",
-          "group": "functions",
+          "group": "nodes",
           "item": "T"
         }
       }

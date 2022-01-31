@@ -118,7 +118,7 @@
         "name": "L",
         "path": {
           "pkg": "tunables",
-          "group": "functions",
+          "group": "nodes",
           "item": "L"
         }
       },
@@ -126,7 +126,7 @@
         "name": "E",
         "path": {
           "pkg": "tunables",
-          "group": "functions",
+          "group": "nodes",
           "item": "E"
         }
       },
@@ -134,7 +134,7 @@
         "name": "LocString",
         "path": {
           "pkg": "tunables",
-          "group": "functions",
+          "group": "nodes",
           "item": "LocString"
         }
       }
