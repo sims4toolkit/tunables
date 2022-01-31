@@ -1,0 +1,77 @@
+{
+  "$schema": "https://raw.githubusercontent.com/sims4toolkit/misc/main/json-schemas/docs-item-schema.json",
+  "imports": [
+    "import { getLocStringFn } from \"@s4tk/tunables\"; // ESM",
+    "const { getLocStringFn } = require(\"@s4tk/tunables\"); // CJS"
+  ],
+  "header": {
+    "title": {
+      "name": "Localized String Node Helper"
+    },
+    "description": "Helper function for creating a LocString function that has a string table built-in (so that one doesn't need to be passed in every call).",
+    "repoUrl": "https://github.com/sims4toolkit/tunables/blob/main/src/tunables.ts"
+  },
+  "sections": [
+    {
+      "content": [
+        {
+          "displayType": "function",
+          "name": "getLocStringFn",
+          "returnType": {
+            "name": "LocString",
+            "path": {
+              "pkg": "tunables",
+              "group": "nodes",
+              "item": "LocString"
+            }
+          },
+          "description": "Returns a LocString function that has a string table built-in.",
+          "arguments": [
+            {
+              "name": "stbl",
+              "type": {
+                "name": "StringTableResource",
+                "path": {
+                  "pkg": "models",
+                  "group": "resources",
+                  "item": "StringTableResource"
+                }
+              },
+              "description": "String table to use in the resulting LocString function.",
+              "optional": false
+            }
+          ],
+          "examples": [
+            {
+              "code": "const stbl = StringTableResource.create();\nstbl.size; // Equals 0\n\nconst LocString = getLocStringFn(stbl);\n\nconst stringNode = LocString({\n  name: \"display_name\",\n  string: \"Trait Name\"\n});\n\nstbl.size; // Now equals 1"
+            },
+            {
+              "lang": "xml",
+              "code": "<!-- Output -->\n<T n=\"display_name\">0x146ECE94<!--Trait Name--></T>"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "footer": {
+    "seeAlso": [
+      {
+        "name": "LocString",
+        "path": {
+          "pkg": "tunables",
+          "group": "nodes",
+          "item": "LocString"
+        }
+      },
+      {
+        "name": "StringTableResource",
+        "path": {
+          "pkg": "models",
+          "group": "resources",
+          "item": "StringTableResource"
+        }
+      }
+    ]
+  }
+}
