@@ -18,11 +18,11 @@
           "displayType": "function",
           "name": "C",
           "returnType": {
-            "name": "XmlNode",
+            "name": "XmlElementNode",
             "path": {
               "pkg": "xml-dom",
-              "group": "interfaces",
-              "item": "XmlNode"
+              "group": "classes",
+              "item": "XmlElementNode"
             }
           },
           "description": "Creates and returns a class tunable (C tag).",

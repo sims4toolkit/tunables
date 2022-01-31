@@ -179,7 +179,7 @@ export function V({ name, type, child }: {
 export function C({ name, children = [] }: {
   name: string;
   children?: XmlNode[];
-}): XmlNode {
+}): XmlElementNode {
   const attributes: TuningAttributes = {};
   if (name != undefined) attributes.n = name;
   return new XmlElementNode({ tag: 'C', attributes, children });

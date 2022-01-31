@@ -18,11 +18,11 @@
           "displayType": "function",
           "name": "Comment",
           "returnType": {
-            "name": "XmlNode",
+            "name": "XmlCommentNode",
             "path": {
               "pkg": "xml-dom",
-              "group": "interfaces",
-              "item": "XmlNode"
+              "group": "classes",
+              "item": "XmlCommentNode"
             }
           },
           "description": "Creates and returns a comment node (<!--Like This-->).",

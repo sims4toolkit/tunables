@@ -18,11 +18,11 @@
           "displayType": "function",
           "name": "T",
           "returnType": {
-            "name": "XmlNode",
+            "name": "XmlElementNode",
             "path": {
               "pkg": "xml-dom",
-              "group": "interfaces",
-              "item": "XmlNode"
+              "group": "classes",
+              "item": "XmlElementNode"
             }
           },
           "description": "Creates and returns a tunable value (<T> tag).",

@@ -1,0 +1,119 @@
+{
+  "$schema": "https://raw.githubusercontent.com/sims4toolkit/misc/main/json-schemas/docs-item-schema.json",
+  "imports": [
+    "import { LocString } from \"@s4tk/tunables\"; // ESM",
+    "const { LocString } = require(\"@s4tk/tunables\"); // CJS"
+  ],
+  "header": {
+    "title": {
+      "name": "Localized String Node Builder"
+    },
+    "description": "Helper function for putting a new localized string in a string table and creating a tunable value node for it (<T>0x12345678<!--Like This--></T>). If there is no need to put the string in a string table, just use the T helper to create the node.",
+    "repoUrl": "https://github.com/sims4toolkit/tunables/blob/main/src/tunables.ts"
+  },
+  "sections": [
+    {
+      "content": [
+        {
+          "displayType": "function",
+          "name": "LocString",
+          "returnType": {
+            "name": "XmlElementNode",
+            "path": {
+              "pkg": "xml-dom",
+              "group": "classes",
+              "item": "XmlElementNode"
+            }
+          },
+          "description": "Hashes a string, puts it in a string table, and returns a node for it.",
+          "arguments": [
+            {
+              "name": "args",
+              "type": {
+                "name": "object"
+              },
+              "description": "Object containing node values.",
+              "optional": false,
+              "properties": [
+                {
+                  "name": "name",
+                  "description": "Value to put in the 'n' attribute.",
+                  "optional": true,
+                  "type": {
+                    "name": "string"
+                  }
+                },
+                {
+                  "name": "string",
+                  "description": "String to put in table.",
+                  "optional": false,
+                  "type": {
+                    "name": "string"
+                  }
+                },
+                {
+                  "name": "toHash",
+                  "description": "If provided, this will be used to generate the hash instead of the string itself.",
+                  "optional": true,
+                  "type": {
+                    "name": "string"
+                  }
+                },
+                {
+                  "name": "stbl",
+                  "description": "Value to put in the 'ev' attribute (only for use within <C> tags).",
+                  "optional": false,
+                  "type": {
+                    "name": "StringTableResource",
+                    "path": {
+                      "pkg": "models",
+                      "group": "resources",
+                      "item": "StringTableResource"
+                    }
+                  }
+                }
+              ]
+            }
+          ],
+          "examples": [
+            {
+              "code": "const stbl = StringTableResource.create();\nstbl.size; // Equals 0\n\nconst stringNode = LocString({\n  name: \"display_name\",\n  string: \"Trait Name\",\n  stbl\n});\n\nstbl.size; // Now equals 1"
+            },
+            {
+              "lang": "xml",
+              "code": "<!-- Output -->\n<T n=\"display_name\">0x146ECE94<!--Trait Name--></T>"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "footer": {
+    "seeAlso": [
+      {
+        "name": "T",
+        "path": {
+          "pkg": "tunables",
+          "group": "nodes",
+          "item": "T"
+        }
+      },
+      {
+        "name": "getLocStringFn",
+        "path": {
+          "pkg": "tunables",
+          "group": "helpers",
+          "item": "getLocStringFn"
+        }
+      },
+      {
+        "name": "StringTableResource",
+        "path": {
+          "pkg": "models",
+          "group": "resources",
+          "item": "StringTableResource"
+        }
+      }
+    ]
+  }
+}
