@@ -103,5 +103,41 @@
         }
       ]
     }
-  ]
+  ],
+  "footer": {
+    "seeAlso": [
+      {
+        "name": "fnv64",
+        "path": {
+          "pkg": "hashing",
+          "group": "hashing",
+          "item": "fnv64"
+        }
+      },
+      {
+        "name": "L",
+        "path": {
+          "pkg": "tunables",
+          "group": "functions",
+          "item": "L"
+        }
+      },
+      {
+        "name": "E",
+        "path": {
+          "pkg": "tunables",
+          "group": "functions",
+          "item": "E"
+        }
+      },
+      {
+        "name": "LocString",
+        "path": {
+          "pkg": "tunables",
+          "group": "functions",
+          "item": "LocString"
+        }
+      }
+    ]
+  }
 }
