@@ -6,7 +6,7 @@
   ],
   "header": {
     "title": {
-      "name": "Tunable Builders"
+      "name": "Tunable Node Builders"
     },
     "description": "Helper functions for creating tunable nodes.",
     "repoUrl": "https://github.com/sims4toolkit/tunables/blob/main/src/tunables.ts"
@@ -191,7 +191,7 @@
                 },
                 {
                   "name": "children",
-                  "description": "Children to add to this node.",
+                  "description": "Children to put in this node.",
                   "optional": true,
                   "type": {
                     "name": "XmlNode[]",
@@ -212,6 +212,61 @@
             {
               "lang": "xml",
               "code": "<!-- Output -->\n<I c=\"Trait\" i=\"trait\" m=\"traits.trait\" n=\"SomeNewTrait\" s=\"4129886381790487547\">\n  ...\n</I>"
+            }
+          ]
+        },
+        {
+          "displayType": "function",
+          "name": "L",
+          "returnType": {
+            "name": "XmlNode",
+            "path": {
+              "pkg": "xml-dom",
+              "group": "interfaces",
+              "item": "XmlNode"
+            }
+          },
+          "description": "Creates and returns a list tunable (L tag).",
+          "arguments": [
+            {
+              "name": "args",
+              "type": {
+                "name": "object"
+              },
+              "description": "Object containing node values.",
+              "optional": false,
+              "properties": [
+                {
+                  "name": "name",
+                  "description": "Value to put in the 'n' attribute.",
+                  "optional": true,
+                  "type": {
+                    "name": "string"
+                  }
+                },
+                {
+                  "name": "children",
+                  "description": "Children to put in this node.",
+                  "optional": true,
+                  "type": {
+                    "name": "XmlNode[]",
+                    "path": {
+                      "pkg": "xml-dom",
+                      "group": "interfaces",
+                      "item": "XmlNode"
+                    }
+                  }
+                }
+              ]
+            }
+          ],
+          "examples": [
+            {
+              "code": "const listNode = L({\n  name: \"some_list\",\n  children: [\n    T({ value: 1 }),\n    T({ value: 2 })\n  ]\n});"
+            },
+            {
+              "lang": "xml",
+              "code": "<!-- Output -->\n<L n=\"some_list\">\n  <T>1</T>\n  <T>2</T>\n</L>"
             }
           ]
         }
