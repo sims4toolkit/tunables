@@ -1,11 +1,11 @@
 {
+  "$schema": "https://raw.githubusercontent.com/sims4toolkit/misc/main/json-schemas/docs-item-schema.json",
   "imports": [
     "import { T, U, ... } from \"@s4tk/tunables\"; // ESM",
     "const { T, U, ... } = require(\"@s4tk/tunables\"); // CJS"
   ],
   "header": {
     "title": {
-      "prefix": null,
       "name": "Tunable Builders"
     },
     "description": "Helper functions for creating tunable nodes.",
@@ -32,11 +32,33 @@
             {
               "name": "args",
               "type": {
-                "name": "object",
-                "path": null
+                "name": "object"
               },
               "description": "Object containing node values.",
-              "optional": false
+              "optional": false,
+              "properties": [
+                {
+                  "name": "name",
+                  "description": "Value to put in the 'n' attribute.",
+                  "optional": false,
+                  "type": {
+                    "name": "string"
+                  }
+                },
+                {
+                  "name": "children",
+                  "description": "Child nodes to put in the class.",
+                  "optional": true,
+                  "type": {
+                    "name": "XmlNode[]",
+                    "path": {
+                      "pkg": "xml-dom",
+                      "group": "interfaces",
+                      "item": "XmlNode"
+                    }
+                  }
+                }
+              ]
             }
           ],
           "examples": [
