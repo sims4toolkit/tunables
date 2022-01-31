@@ -1,0 +1,52 @@
+{
+  "$schema": "https://raw.githubusercontent.com/sims4toolkit/misc/main/json-schemas/docs-item-schema.json",
+  "imports": [
+    "import { Comment } from \"@s4tk/tunables\"; // ESM",
+    "const { Comment } = require(\"@s4tk/tunables\"); // CJS"
+  ],
+  "header": {
+    "title": {
+      "name": "Comment Node Builder"
+    },
+    "description": "Helper function for creating a comment node (<!--Like This-->).",
+    "repoUrl": "https://github.com/sims4toolkit/tunables/blob/main/src/tunables.ts"
+  },
+  "sections": [
+    {
+      "content": [
+        {
+          "displayType": "function",
+          "name": "Comment",
+          "returnType": {
+            "name": "XmlNode",
+            "path": {
+              "pkg": "xml-dom",
+              "group": "interfaces",
+              "item": "XmlNode"
+            }
+          },
+          "description": "Creates and returns a comment node (<!--Like This-->).",
+          "arguments": [
+            {
+              "name": "comment",
+              "description": "Value to put in the comment.",
+              "optional": false,
+              "type": {
+                "name": "string"
+              }
+            }
+          ],
+          "examples": [
+            {
+              "code": "const commentNode = Comment(\"This is a comment.\");"
+            },
+            {
+              "lang": "xml",
+              "code": "<!-- Output -->\n<!--This is a comment.-->"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
