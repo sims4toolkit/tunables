@@ -5,16 +5,24 @@
   ],
   "groups": [
     {
-      "name": "functions",
+      "name": "nodes",
       "items": [
         "C",
+        "Comment",
         "E",
         "I",
         "L",
+        "LocString",
         "M",
         "T",
         "U",
         "V"
+      ]
+    },
+    {
+      "name": "helpers",
+      "items": [
+        "getLocStringFn"
       ]
     }
   ]
