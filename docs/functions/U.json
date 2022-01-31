@@ -1,0 +1,95 @@
+{
+  "$schema": "https://raw.githubusercontent.com/sims4toolkit/misc/main/json-schemas/docs-item-schema.json",
+  "imports": [
+    "import { U } from \"@s4tk/tunables\"; // ESM",
+    "const { U } = require(\"@s4tk/tunables\"); // CJS"
+  ],
+  "header": {
+    "title": {
+      "name": "Tunable Tuple Builder"
+    },
+    "description": "Helper function for creating a tunable tuple node (<U> tag).",
+    "repoUrl": "https://github.com/sims4toolkit/tunables/blob/main/src/tunables.ts"
+  },
+  "sections": [
+    {
+      "content": [
+        {
+          "displayType": "function",
+          "name": "U",
+          "returnType": {
+            "name": "XmlNode",
+            "path": {
+              "pkg": "xml-dom",
+              "group": "interfaces",
+              "item": "XmlNode"
+            }
+          },
+          "description": "Creates and returns a tuple tunable (<U> tag).",
+          "arguments": [
+            {
+              "name": "args",
+              "type": {
+                "name": "object"
+              },
+              "description": "Object containing node values.",
+              "optional": false,
+              "properties": [
+                {
+                  "name": "name",
+                  "description": "Value to put in the 'n' attribute.",
+                  "optional": true,
+                  "type": {
+                    "name": "string"
+                  }
+                },
+                {
+                  "name": "children",
+                  "description": "Children to put in this node.",
+                  "optional": true,
+                  "type": {
+                    "name": "XmlNode[]",
+                    "path": {
+                      "pkg": "xml-dom",
+                      "group": "interfaces",
+                      "item": "XmlNode"
+                    }
+                  }
+                }
+              ]
+            }
+          ],
+          "examples": [
+            {
+              "code": "const tupleNode = U({\n  name: \"some_tuple\",\n  children: [\n    T({ name: \"value\", value: 10 }),\n    E({ name: \"age\", value: \"ADULT\" })\n  ]\n})"
+            },
+            {
+              "lang": "xml",
+              "code": "<!-- Output -->\n<U n=\"some_tuple\">\n  <T n=\"value\">10</T>\n  <E n=\"age\">ADULT</E>\n</U>"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "footer": {
+    "seeAlso": [
+      {
+        "name": "T",
+        "path": {
+          "pkg": "tunables",
+          "group": "functions",
+          "item": "T"
+        }
+      },
+      {
+        "name": "E",
+        "path": {
+          "pkg": "tunables",
+          "group": "functions",
+          "item": "E"
+        }
+      }
+    ]
+  }
+}

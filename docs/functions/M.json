@@ -1,0 +1,111 @@
+{
+  "$schema": "https://raw.githubusercontent.com/sims4toolkit/misc/main/json-schemas/docs-item-schema.json",
+  "imports": [
+    "import { M } from \"@s4tk/tunables\"; // ESM",
+    "const { M } = require(\"@s4tk/tunables\"); // CJS"
+  ],
+  "header": {
+    "title": {
+      "name": "Tunable Module Builder"
+    },
+    "description": "Helper function for creating a tunable module node (<M> tag).",
+    "repoUrl": "https://github.com/sims4toolkit/tunables/blob/main/src/tunables.ts"
+  },
+  "sections": [
+    {
+      "content": [
+        {
+          "displayType": "function",
+          "name": "M",
+          "returnType": {
+            "name": "XmlNode",
+            "path": {
+              "pkg": "xml-dom",
+              "group": "interfaces",
+              "item": "XmlNode"
+            }
+          },
+          "description": "Creates and returns a module tunable (<M> tag).",
+          "arguments": [
+            {
+              "name": "args",
+              "type": {
+                "name": "object"
+              },
+              "description": "Object containing node values.",
+              "optional": false,
+              "properties": [
+                {
+                  "name": "n",
+                  "description": "Value to put in the 'n' attribute.",
+                  "optional": false,
+                  "type": {
+                    "name": "string"
+                  }
+                },
+                {
+                  "name": "s",
+                  "description": "Value to put in the 's' attribute.",
+                  "optional": false,
+                  "type": {
+                    "name": "string | number | bigint"
+                  }
+                },
+                {
+                  "name": "children",
+                  "description": "Children to put in this node.",
+                  "optional": true,
+                  "type": {
+                    "name": "XmlNode[]",
+                    "path": {
+                      "pkg": "xml-dom",
+                      "group": "interfaces",
+                      "item": "XmlNode"
+                    }
+                  }
+                }
+              ]
+            }
+          ],
+          "examples": [
+            {
+              "code": "const moduleName = \"path.to.module\";\n\nconst mod = M({\n  n: moduleName,\n  s: fnv64(moduleName.replace(/\\./g, '-')),\n  children: [\n    C({\n      name: \"SomeClass\",\n      children: [\n        T({\n          name: \"VALUE\",\n          value: 10\n        })\n      ]\n    })\n  ]\n});"
+            },
+            {
+              "lang": "xml",
+              "code": "<!-- Output -->\n<M n=\"path.to.module\" s=\"14614615209877073423\">\n  <C n=\"SomeClass\">\n    <T n=\"VALUE\">10</T>\n  </C>\n</M>"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "footer": {
+    "seeAlso": [
+      {
+        "name": "fnv64",
+        "path": {
+          "pkg": "hashing",
+          "group": "hashing",
+          "item": "fnv64"
+        }
+      },
+      {
+        "name": "C",
+        "path": {
+          "pkg": "tunables",
+          "group": "functions",
+          "item": "C"
+        }
+      },
+      {
+        "name": "T",
+        "path": {
+          "pkg": "tunables",
+          "group": "functions",
+          "item": "T"
+        }
+      }
+    ]
+  }
+}
