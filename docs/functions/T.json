@@ -1,0 +1,86 @@
+{
+  "$schema": "https://raw.githubusercontent.com/sims4toolkit/misc/main/json-schemas/docs-item-schema.json",
+  "imports": [
+    "import { T } from \"@s4tk/tunables\"; // ESM",
+    "const { T } = require(\"@s4tk/tunables\"); // CJS"
+  ],
+  "header": {
+    "title": {
+      "name": "Tunable Value Builder"
+    },
+    "description": "Helper function for creating a tunable value node (<T> tag).",
+    "repoUrl": "https://github.com/sims4toolkit/tunables/blob/main/src/tunables.ts"
+  },
+  "sections": [
+    {
+      "content": [
+        {
+          "displayType": "function",
+          "name": "T",
+          "returnType": {
+            "name": "XmlNode",
+            "path": {
+              "pkg": "xml-dom",
+              "group": "interfaces",
+              "item": "XmlNode"
+            }
+          },
+          "description": "Creates and returns a tunable value (<T> tag).",
+          "arguments": [
+            {
+              "name": "args",
+              "type": {
+                "name": "object"
+              },
+              "description": "Object containing node values.",
+              "optional": false,
+              "properties": [
+                {
+                  "name": "name",
+                  "description": "Value to put in the 'n' attribute.",
+                  "optional": true,
+                  "type": {
+                    "name": "string"
+                  }
+                },
+                {
+                  "name": "value",
+                  "description": "Value to put in this node.",
+                  "optional": true,
+                  "type": {
+                    "name": "any"
+                  }
+                },
+                {
+                  "name": "comment",
+                  "description": "Comment to put in this node.",
+                  "optional": true,
+                  "type": {
+                    "name": "string"
+                  }
+                },
+                {
+                  "name": "ev",
+                  "description": "Value to put in the 'ev' attribute (only for use within <C> tags).",
+                  "optional": true,
+                  "type": {
+                    "name": "string | number | bigint"
+                  }
+                }
+              ]
+            }
+          ],
+          "examples": [
+            {
+              "code": "const tunableNode = T({\n  name: \"something\",\n  value: 12345,\n  comment: \"some_tuning_file\"\n});"
+            },
+            {
+              "lang": "xml",
+              "code": "<!-- Output -->\n<T n=\"something\">12345<!--some_tuning_file--></T>"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
