@@ -81,7 +81,7 @@
               "item": "XmlNode"
             }
           },
-          "description": "Creates and returns a class tunable (C tag).",
+          "description": "Creates and returns an enum tunable (E tag).",
           "arguments": [
             {
               "name": "args",
@@ -125,6 +125,93 @@
             {
               "lang": "xml",
               "code": "<!-- Output -->\n<E n=\"age\">ADULT<!--This is for adults.--></E>"
+            }
+          ]
+        },
+        {
+          "displayType": "function",
+          "name": "I",
+          "returnType": {
+            "name": "XmlNode",
+            "path": {
+              "pkg": "xml-dom",
+              "group": "interfaces",
+              "item": "XmlNode"
+            }
+          },
+          "description": "Creates and returns an instance tunable (I tag).",
+          "arguments": [
+            {
+              "name": "args",
+              "type": {
+                "name": "object"
+              },
+              "description": "Object containing node values.",
+              "optional": false,
+              "properties": [
+                {
+                  "name": "c",
+                  "description": "Value to put in the 'c' attribute.",
+                  "optional": false,
+                  "type": {
+                    "name": "string"
+                  }
+                },
+                {
+                  "name": "i",
+                  "description": "Value to put in the 'i' attribute.",
+                  "optional": false,
+                  "type": {
+                    "name": "string"
+                  }
+                },
+                {
+                  "name": "m",
+                  "description": "Value to put in the 'm' attribute.",
+                  "optional": false,
+                  "type": {
+                    "name": "string"
+                  }
+                },
+                {
+                  "name": "n",
+                  "description": "Value to put in the 'n' attribute.",
+                  "optional": false,
+                  "type": {
+                    "name": "string"
+                  }
+                },
+                {
+                  "name": "s",
+                  "description": "Value to put in the 's' attribute.",
+                  "optional": false,
+                  "type": {
+                    "name": "string | number | bigint"
+                  }
+                },
+                {
+                  "name": "children",
+                  "description": "Children to add to this node.",
+                  "optional": true,
+                  "type": {
+                    "name": "XmlNode[]",
+                    "path": {
+                      "pkg": "xml-dom",
+                      "group": "interfaces",
+                      "item": "XmlNode"
+                    }
+                  }
+                }
+              ]
+            }
+          ],
+          "examples": [
+            {
+              "code": "const inst = I({\n  c: \"Trait\",\n  i: \"trait\",\n  m: \"traits.trait\",\n  n: \"SomeNewTrait\",\n  s: fnv64(\"SomeNewTrait\"),\n  children: [...]\n});"
+            },
+            {
+              "lang": "xml",
+              "code": "<!-- Output -->\n<I c=\"Trait\" i=\"trait\" m=\"traits.trait\" n=\"SomeNewTrait\" s=\"4129886381790487547\">\n  ...\n</I>"
             }
           ]
         }
