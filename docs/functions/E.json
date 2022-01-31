@@ -1,0 +1,78 @@
+{
+  "$schema": "https://raw.githubusercontent.com/sims4toolkit/misc/main/json-schemas/docs-item-schema.json",
+  "imports": [
+    "import { E } from \"@s4tk/tunables\"; // ESM",
+    "const { E } = require(\"@s4tk/tunables\"); // CJS"
+  ],
+  "header": {
+    "title": {
+      "name": "Tunable Enum Builder"
+    },
+    "description": "Helper function for creating a tunable enum node (<E> tag).",
+    "repoUrl": "https://github.com/sims4toolkit/tunables/blob/main/src/tunables.ts"
+  },
+  "sections": [
+    {
+      "content": [
+        {
+          "displayType": "function",
+          "name": "E",
+          "returnType": {
+            "name": "XmlNode",
+            "path": {
+              "pkg": "xml-dom",
+              "group": "interfaces",
+              "item": "XmlNode"
+            }
+          },
+          "description": "Creates and returns an enum tunable (<E> tag).",
+          "arguments": [
+            {
+              "name": "args",
+              "type": {
+                "name": "object"
+              },
+              "description": "Object containing node values.",
+              "optional": false,
+              "properties": [
+                {
+                  "name": "name",
+                  "description": "Value to put in the 'n' attribute.",
+                  "optional": true,
+                  "type": {
+                    "name": "string"
+                  }
+                },
+                {
+                  "name": "value",
+                  "description": "Value to put in this node.",
+                  "optional": true,
+                  "type": {
+                    "name": "string"
+                  }
+                },
+                {
+                  "name": "comment",
+                  "description": "Comment to put in this node.",
+                  "optional": true,
+                  "type": {
+                    "name": "string"
+                  }
+                }
+              ]
+            }
+          ],
+          "examples": [
+            {
+              "code": "const enumNode = E({\n  name: \"age\",\n  value: \"ADULT\",\n  comment: \"This is for adults.\"\n});"
+            },
+            {
+              "lang": "xml",
+              "code": "<!-- Output -->\n<E n=\"age\">ADULT<!--This is for adults.--></E>"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

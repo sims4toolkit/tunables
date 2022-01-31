@@ -7,8 +7,10 @@
     {
       "name": "functions",
       "items": [
-        "Tunables",
-        "Strings"
+        "C",
+        "E",
+        "I",
+        "L"
       ]
     }
   ]

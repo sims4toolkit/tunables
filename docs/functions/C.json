@@ -1,0 +1,87 @@
+{
+  "$schema": "https://raw.githubusercontent.com/sims4toolkit/misc/main/json-schemas/docs-item-schema.json",
+  "imports": [
+    "import { C } from \"@s4tk/tunables\"; // ESM",
+    "const { C } = require(\"@s4tk/tunables\"); // CJS"
+  ],
+  "header": {
+    "title": {
+      "name": "Tunable Class Builder"
+    },
+    "description": "Helper function for creating a tunable class node (<C> tag).",
+    "repoUrl": "https://github.com/sims4toolkit/tunables/blob/main/src/tunables.ts"
+  },
+  "sections": [
+    {
+      "content": [
+        {
+          "displayType": "function",
+          "name": "C",
+          "returnType": {
+            "name": "XmlNode",
+            "path": {
+              "pkg": "xml-dom",
+              "group": "interfaces",
+              "item": "XmlNode"
+            }
+          },
+          "description": "Creates and returns a class tunable (C tag).",
+          "arguments": [
+            {
+              "name": "args",
+              "type": {
+                "name": "object"
+              },
+              "description": "Object containing node values.",
+              "optional": false,
+              "properties": [
+                {
+                  "name": "name",
+                  "description": "Value to put in the 'n' attribute.",
+                  "optional": false,
+                  "type": {
+                    "name": "string"
+                  }
+                },
+                {
+                  "name": "children",
+                  "description": "Child nodes to put in the class.",
+                  "optional": true,
+                  "type": {
+                    "name": "XmlNode[]",
+                    "path": {
+                      "pkg": "xml-dom",
+                      "group": "interfaces",
+                      "item": "XmlNode"
+                    }
+                  }
+                }
+              ]
+            }
+          ],
+          "examples": [
+            {
+              "code": "const classNode = C({\n  name: \"SomeClass\",\n  children: [\n    T({\n      name: \"SOME_VALUE\",\n      value: 10\n    })\n  ]\n});"
+            },
+            {
+              "lang": "xml",
+              "code": "<!-- Output -->\n<C n=\"SomeClass\">\n  <T n=\"SOME_VALUE\">10</T>\n</C>"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "footer": {
+    "seeAlso": [
+      {
+        "name": "T",
+        "path": {
+          "pkg": "tunables",
+          "group": "functions",
+          "item": "T"
+        }
+      }
+    ]
+  }
+}
