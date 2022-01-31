@@ -17,7 +17,6 @@
       "content": [
         {
           "displayType": "function",
-          "prefix": "",
           "name": "C",
           "returnType": {
             "name": "XmlNode",
@@ -63,12 +62,69 @@
           ],
           "examples": [
             {
-              "lang": "js",
-              "code": "const classNode = C({});"
+              "code": "const classNode = C({\n  name: \"SomeClass\",\n  children: [\n    T({\n      name: \"SOME_VALUE\",\n      value: 10\n    })\n  ]\n});"
             },
             {
               "lang": "xml",
-              "code": "<!-- Output -->\n<C />"
+              "code": "<!-- Output -->\n<C n=\"SomeClass\">\n  <T n=\"SOME_VALUE\">10</T>\n</C>"
+            }
+          ]
+        },
+        {
+          "displayType": "function",
+          "name": "E",
+          "returnType": {
+            "name": "XmlNode",
+            "path": {
+              "pkg": "xml-dom",
+              "group": "interfaces",
+              "item": "XmlNode"
+            }
+          },
+          "description": "Creates and returns a class tunable (C tag).",
+          "arguments": [
+            {
+              "name": "args",
+              "type": {
+                "name": "object"
+              },
+              "description": "Object containing node values.",
+              "optional": false,
+              "properties": [
+                {
+                  "name": "name",
+                  "description": "Value to put in the 'n' attribute.",
+                  "optional": true,
+                  "type": {
+                    "name": "string"
+                  }
+                },
+                {
+                  "name": "value",
+                  "description": "Value to put in this node.",
+                  "optional": true,
+                  "type": {
+                    "name": "string"
+                  }
+                },
+                {
+                  "name": "comment",
+                  "description": "Comment to put in this node.",
+                  "optional": true,
+                  "type": {
+                    "name": "string"
+                  }
+                }
+              ]
+            }
+          ],
+          "examples": [
+            {
+              "code": "const enumNode = E({\n  name: \"age\",\n  value: \"ADULT\",\n  comment: \"This is for adults.\"\n});"
+            },
+            {
+              "lang": "xml",
+              "code": "<!-- Output -->\n<E n=\"age\">ADULT<!--This is for adults.--></E>"
             }
           ]
         }
