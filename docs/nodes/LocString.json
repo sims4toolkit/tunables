@@ -6,10 +6,11 @@
   ],
   "header": {
     "title": {
-      "name": "Localized String Node Builder"
+      "name": "LocString()",
+      "prefix": "function"
     },
     "description": "Helper function for putting a new localized string in a string table and creating a tunable value node for it (<T>0x12345678<!--Like This--></T>). If there is no need to put the string in a string table, just use the T helper to create the node.",
-    "repoUrl": "https://github.com/sims4toolkit/tunables/blob/main/src/tunables.ts"
+    "sourceCode": "src/tunables.ts"
   },
   "sections": [
     {

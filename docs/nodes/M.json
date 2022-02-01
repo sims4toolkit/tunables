@@ -6,10 +6,11 @@
   ],
   "header": {
     "title": {
-      "name": "Tunable Module Builder"
+      "name": "M()",
+      "prefix": "function"
     },
     "description": "Helper function for creating a tunable module node (<M> tag).",
-    "repoUrl": "https://github.com/sims4toolkit/tunables/blob/main/src/tunables.ts"
+    "sourceCode": "src/tunables.ts"
   },
   "sections": [
     {

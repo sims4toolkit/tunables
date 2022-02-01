@@ -6,10 +6,11 @@
   ],
   "header": {
     "title": {
-      "name": "Tunable Enum Builder"
+      "name": "E()",
+      "prefix": "function"
     },
     "description": "Helper function for creating a tunable enum node (<E> tag).",
-    "repoUrl": "https://github.com/sims4toolkit/tunables/blob/main/src/tunables.ts"
+    "sourceCode": "src/tunables.ts"
   },
   "sections": [
     {

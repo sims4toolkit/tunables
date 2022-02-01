@@ -6,10 +6,11 @@
   ],
   "header": {
     "title": {
-      "name": "Comment Node Builder"
+      "name": "Comment()",
+      "prefix": "function"
     },
     "description": "Helper function for creating a comment node (<!--Like This-->).",
-    "repoUrl": "https://github.com/sims4toolkit/tunables/blob/main/src/tunables.ts"
+    "sourceCode": "src/tunables.ts"
   },
   "sections": [
     {
