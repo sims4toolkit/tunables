@@ -1,6 +1,6 @@
 {
   "name": "@s4tk/tunables",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "Convenience functions for building tuning nodes.",
   "main": "./tunables.js",
   "repository": {
