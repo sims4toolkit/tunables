@@ -2,7 +2,7 @@ import { expect } from "chai";
 import { fnv32 } from "@s4tk/hashing";
 import { formatStringKey } from "@s4tk/hashing/formatting";
 import { StringTableResource } from "@s4tk/models";
-import { I, M, T, E, L, U, V, C, Comment, LocString, getLocStringFn } from "../dst/tunables";
+import { I, M, T, E, L, U, V, C, Comment, LocString, getLocStringFn, Ignore } from "../dst/tunables";
 
 describe("#I()", function () {
   it("should create a node with a <I> tag", function () {
@@ -412,6 +412,31 @@ describe("#Comment()", function () {
   it("should serialize with XML comment syntax", function () {
     const node = Comment("Hello");
     expect(node.toXml()).to.equal("<!--Hello-->");
+  });
+});
+
+describe("#Ignore()", function () {
+  it("should create an ?ignore node with no children if none given", function () {
+    const node = Ignore();
+    expect(node.tag).to.equal("ignore");
+    expect(node.numChildren).to.equal(0);
+  });
+
+  it("should create an ?ignore node with the given children", function () {
+    const child1 = T({ value: 12345 });
+    const child2 = T({ value: 67890 });
+    const node = Ignore([child1, child2]);
+    expect(node.tag).to.equal("ignore");
+    expect(node.numChildren).to.equal(2);
+    expect(node.children[0]).to.equal(child1);
+    expect(node.children[1]).to.equal(child2);
+  });
+
+  it("should serialize with XML comment syntax", function () {
+    const child1 = T({ value: 12345 });
+    const child2 = T({ value: 67890 });
+    const node = Ignore([child1, child2]);
+    expect(node.toXml()).to.equal("<?ignore\n  <T>12345</T>\n  <T>67890</T>\n?>");
   });
 });
 
