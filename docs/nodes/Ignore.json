@@ -1,0 +1,49 @@
+{
+  "$schema": "https://raw.githubusercontent.com/sims4toolkit/misc/main/json-schemas/docs-item-schema.json",
+  "imports": [
+    "import { Ignore } from \"@s4tk/tunables\"; // ESM",
+    "const { Ignore } = require(\"@s4tk/tunables\"); // CJS"
+  ],
+  "header": {
+    "title": {
+      "name": "Ignore()",
+      "prefix": "function"
+    },
+    "description": "Create a block comment via the ?ignore processing instruction.",
+    "sourceCode": "src/tunables.ts"
+  },
+  "sections": [
+    {
+      "content": [
+        {
+          "displayType": "function",
+          "name": "Ignore",
+          "returnType": {
+            "name": "XmlWrapperNode",
+            "path": {
+              "pkg": "xml-dom",
+              "group": "classes",
+              "item": "XmlWrapperNode"
+            }
+          },
+          "description": "Creates an `<?ignore?>` processing instruction that acts as a block comment.",
+          "arguments": [
+            {
+              "name": "children",
+              "type": {
+                "name": "XmlNode[]",
+                "path": {
+                  "pkg": "xml-dom",
+                  "group": "interfaces",
+                  "item": "XmlNode"
+                }
+              },
+              "description": "Array of child nodes to add.",
+              "optional": true
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

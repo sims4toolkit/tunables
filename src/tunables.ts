@@ -1,5 +1,5 @@
 import type { StringTableResource } from "@s4tk/models";
-import { XmlNode, XmlElementNode, XmlCommentNode, XmlValueNode } from "@s4tk/xml-dom";
+import { XmlNode, XmlElementNode, XmlCommentNode, XmlValueNode, XmlWrapperNode } from "@s4tk/xml-dom";
 import { formatStringKey } from "@s4tk/hashing/formatting";
 
 //#region Types
@@ -192,6 +192,15 @@ export function C({ name, children = [] }: {
  */
 export function Comment(comment: string): XmlCommentNode {
   return new XmlCommentNode(comment);
+}
+
+/**
+ * Creates an `<?ignore?>` processing instruction that acts as a block comment.
+ * 
+ * @param children List of child nodes to ignore
+ */
+export function Ignore(children: XmlNode[] = []): XmlWrapperNode {
+  return new XmlWrapperNode({ tag: "ignore", children });
 }
 
 /**
